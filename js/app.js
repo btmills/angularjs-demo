@@ -28,6 +28,7 @@ todoapp.controller('TodoCtrl', function TodoCtrl($scope) {
 		$scope.completedCount = $scope.todos.filter(function (todo) {
 			return todo.completed;
 		}).length;
+		$scope.remainingCount = $scope.todos.length - $scope.completedCount;
 	}, true);
 
 });

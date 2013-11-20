@@ -25,6 +25,10 @@
 		</ul>
 	</section>
 	<footer id="footer" ng-show="todos.length" ng-cloak>
+		<span id="todo-count">
+			<strong>{{remainingCount}}</strong>
+			<ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
+		</span>
 		<button id="clear-completed" ng-click="clearCompleted()" ng-show="completedCount">Clear completed ({{completedCount}})</button>
 	</footer>
 	<script src="js/angular.js"></script>
