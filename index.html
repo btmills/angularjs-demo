@@ -15,7 +15,7 @@
 	</header>
 	<section id="main" ng-show="todos.length" ng-cloak>
 		<ul id="todo-list">
-			<li ng-repeat="todo in todos" ng-class="{ completed: todo.completed }">
+			<li ng-repeat="todo in todos | filter:statusFilter" ng-class="{ completed: todo.completed }">
 				<div class="view">
 					<input class="toggle" type="checkbox" ng-model="todo.completed" />
 					<label>{{todo.title}}</label>
@@ -29,6 +29,10 @@
 			<strong>{{remainingCount}}</strong>
 			<ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
 		</span>
+		<ul id="filters">
+			<li><a ng-class="{ selected: location.path() == '/' }" href="#/">All</a></li>
+			<li><a ng-class="{ selected: location.path() == '/active' }" href="#/active">Active</a></li>
+		</ul>
 		<button id="clear-completed" ng-click="clearCompleted()" ng-show="completedCount">Clear completed ({{completedCount}})</button>
 	</footer>
 	<script src="js/angular.js"></script>

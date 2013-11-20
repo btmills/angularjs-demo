@@ -1,6 +1,6 @@
 var todoapp = angular.module('todoapp', []);
 
-todoapp.controller('TodoCtrl', function TodoCtrl($scope) {
+todoapp.controller('TodoCtrl', function TodoCtrl($scope, $location) {
 
 	$scope.todos = [];
 	$scope.newTodo = '';
@@ -30,5 +30,16 @@ todoapp.controller('TodoCtrl', function TodoCtrl($scope) {
 		}).length;
 		$scope.remainingCount = $scope.todos.length - $scope.completedCount;
 	}, true);
+
+	$scope.location = $location;
+
+	if ($location.path() === '') {
+		$location.path('/');
+	}
+
+	$scope.$watch('location.path()', function (path) {
+		$scope.statusFilter = (path === '/active') ?
+			{ completed: false } : null;
+	});
 
 });
