@@ -24,4 +24,10 @@ todoapp.controller('TodoCtrl', function TodoCtrl($scope) {
 		});
 	};
 
+	$scope.$watch('todos', function () {
+		$scope.completedCount = $scope.todos.filter(function (todo) {
+			return todo.completed;
+		}).length;
+	}, true);
+
 });

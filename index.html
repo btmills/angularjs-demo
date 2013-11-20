@@ -25,7 +25,7 @@
 		</ul>
 	</section>
 	<footer id="footer" ng-show="todos.length" ng-cloak>
-		<button id="clear-completed" ng-click="clearCompleted()">Clear completed</button>
+		<button id="clear-completed" ng-click="clearCompleted()" ng-show="completedCount">Clear completed ({{completedCount}})</button>
 	</footer>
 	<script src="js/angular.js"></script>
 	<script src="js/app.js"></script>
