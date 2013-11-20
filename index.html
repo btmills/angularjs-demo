@@ -19,6 +19,7 @@
 				<div class="view">
 					<input class="toggle" type="checkbox" ng-model="todo.completed" />
 					<label>{{todo.title}}</label>
+					<button class="destroy" ng-click="removeTodo(todo)"></button>
 				</div>
 			</li>
 		</ul>

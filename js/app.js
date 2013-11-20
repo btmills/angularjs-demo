@@ -14,4 +14,8 @@ todoapp.controller('TodoCtrl', function TodoCtrl($scope) {
 		$scope.newTodo = '';
 	};
 
+	$scope.removeTodo = function (todo) {
+		$scope.todos.splice($scope.todos.indexOf(todo), 1);
+	};
+
 });
