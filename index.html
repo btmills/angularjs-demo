@@ -5,7 +5,22 @@
 	<link rel="stylesheet" href="css/todo.css" />
 	<title>AngularJS Todo</title>
 </head>
-<body>
+<body id="todoapp">
+	<header id="header">
+		<h1>todos</h1>
+		<form id="todo-form">
+			<input id="new-todo" placeholder="What needs to be done?" autofocus />
+		</form>
+	</header>
+	<section id="main">
+		<ul id="todo-list">
+			<li>
+				<div class="view">
+					<label>Learn AngularJS</label>
+				</div>
+			</li>
+		</ul>
+	</section>
 	<script src="js/angular.js"></script>
 	<script src="js/app.js"></script>
 </body>
