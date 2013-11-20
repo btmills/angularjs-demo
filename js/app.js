@@ -18,4 +18,10 @@ todoapp.controller('TodoCtrl', function TodoCtrl($scope) {
 		$scope.todos.splice($scope.todos.indexOf(todo), 1);
 	};
 
+	$scope.clearCompleted = function () {
+		$scope.todos = $scope.todos.filter(function (todo) {
+			return !todo.completed;
+		});
+	};
+
 });
